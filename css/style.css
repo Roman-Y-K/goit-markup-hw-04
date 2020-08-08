@@ -118,6 +118,16 @@ body {
   color: var(--accent-text-color);
 }
 
+/* .pfone::before {
+  display: inline-flex;
+  content: "";
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+
+  background-image: url(../images/icons/smartphone.svg);
+} */
+
 /* Стили контактов */
 
 .contacts {
@@ -141,7 +151,24 @@ body {
 
 /* стили героя */
 .hero {
+  height: 600px;
+  max-width: 1600px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-right: auto;
+  margin-left: auto;
+
   background-color: rgba(47, 48, 58, 0.8);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
   text-align: center;
 }
 .hero-title {
@@ -208,6 +235,32 @@ body {
 .advantages-item:not(:last-child) {
   margin-right: 30px;
 }
+
+.advantages-item::before {
+  content: "";
+  display: block;
+  width: 270px;
+  height: 120px;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.antenna::before {
+  background-image: url(../images/icons/antenna.svg);
+}
+.clock::before {
+  background-image: url(../images/icons/clock.svg);
+}
+
+.diagram::before {
+  background-image: url(../images/icons/diagram.svg);
+}
+.astronaut::before {
+  background-image: url(../images/icons/astronaut.svg);
+}
+
 /* стили "Чем мы занимамся */
 .engage {
   padding-top: 0;
@@ -242,7 +295,7 @@ body {
 }
 .team-item {
   border-radius: 0px 0px 4px 4px;
-  padding-bottom: 24px;
+  padding-bottom: 30px;
 
   width: calc((100% - 90px) / 4);
   background-color: var(--primery-white-color);
@@ -279,6 +332,42 @@ ul a:hover,
 ul a:focus {
   color: var(--accent-text-color);
 }
+.social-list {
+  display: inline-flex;
+
+  margin-right: 32px;
+  margin-left: 32px;
+}
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-links {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px, 20px;
+}
+
+.instagram {
+  background-image: url(../images/icons/instagram.svg);
+}
+.twitter {
+  background-image: url(../images/icons/twitter.svg);
+  background-size: 20px, 16px;
+}
+.facebook {
+  background-image: url(../images/icons/facebook.svg);
+  background-size: 10px, 20px;
+}
+.linkedin {
+  background-image: url(../images/icons/linkedin.svg);
+  background-size: 20px, 20px;
+}
+
 .team-card {
   background-color: var(--primery-white-color);
 }
