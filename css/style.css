@@ -14,6 +14,7 @@ html {
   --accent-text-color: #2196f3;
   --primery-white-color: #ffffff;
   --footer-color: #2f303a;
+  --icon-color: #afb1b8;
 }
 
 /* общие стили сайта  */
@@ -118,16 +119,6 @@ body {
   color: var(--accent-text-color);
 }
 
-/* .pfone::before {
-  display: inline-flex;
-  content: "";
-  width: 10px;
-  height: 16px;
-  margin-right: 10px;
-
-  background-image: url(../images/icons/smartphone.svg);
-} */
-
 /* Стили контактов */
 
 .contacts {
@@ -138,6 +129,9 @@ body {
   margin-right: 30px;
 }
 .contacts .link {
+  display: inline-flex;
+  align-items: center;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.142;
@@ -147,6 +141,32 @@ body {
 .contacts .link:hover,
 .contacts .link:focus {
   color: var(--accent-text-color);
+}
+
+.icon-mail {
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  align-items: baseline;
+  fill: currentColor;
+}
+
+.icon-mail:hover,
+.icon-mail:focus {
+  fill: currentColor;
+}
+
+.icon-phone {
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+  align-items: baseline;
+  fill: currentColor;
+}
+
+.icon-phone:hover,
+.icon-phone:focus {
+  fill: currentColor;
 }
 
 /* стили героя */
@@ -236,30 +256,20 @@ body {
   margin-right: 30px;
 }
 
-.advantages-item::before {
-  content: "";
-  display: block;
-  width: 270px;
+.icons-advantages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
   height: 120px;
   background-color: #f5f4fa;
   border-radius: 4px;
   margin-bottom: 30px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.antenna::before {
-  background-image: url(../images/icons/antenna.svg);
-}
-.clock::before {
-  background-image: url(../images/icons/clock.svg);
 }
 
-.diagram::before {
-  background-image: url(../images/icons/diagram.svg);
-}
-.astronaut::before {
-  background-image: url(../images/icons/astronaut.svg);
-}
+/* .icon-antenna {
+} */
 
 /* стили "Чем мы занимамся */
 .engage {
@@ -296,6 +306,8 @@ body {
 .team-item {
   border-radius: 0px 0px 4px 4px;
   padding-bottom: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 
   width: calc((100% - 90px) / 4);
   background-color: var(--primery-white-color);
@@ -328,10 +340,7 @@ body {
 
   color: var(--secondary-text-color);
 }
-ul a:hover,
-ul a:focus {
-  color: var(--accent-text-color);
-}
+
 .social-list {
   display: inline-flex;
 
@@ -343,29 +352,24 @@ ul a:focus {
 }
 
 .social-links {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px, 20px;
 }
 
-.instagram {
-  background-image: url(../images/icons/instagram.svg);
+.social-links:hover,
+.social-links:focus {
+  background-color: var(--accent-text-color);
+  border-radius: 50%;
 }
-.twitter {
-  background-image: url(../images/icons/twitter.svg);
-  background-size: 20px, 16px;
+.icon {
+  fill: var(--icon-color);
 }
-.facebook {
-  background-image: url(../images/icons/facebook.svg);
-  background-size: 10px, 20px;
-}
-.linkedin {
-  background-image: url(../images/icons/linkedin.svg);
-  background-size: 20px, 20px;
+.social-links:hover .icon,
+.social-links:focus .icon {
+  fill: var(--primery-white-color);
 }
 
 .team-card {
@@ -375,6 +379,26 @@ ul a:focus {
 .clients-list {
   display: flex;
   justify-content: center;
+}
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border: 1px solid var(--accent-text-color);
+}
+
+.clients-link:hover .icon,
+.clients-link:focus .icon {
+  fill: var(--accent-text-color);
 }
 .clients-item:not(:last-child) {
   margin-right: 30px;
@@ -406,6 +430,7 @@ ul a:focus {
 
 .address {
   font-size: 14px;
+  font-style: normal;
   line-height: 1.714;
   color: var(--primery-white-color);
 }
@@ -424,11 +449,35 @@ ul a:focus {
   text-transform: uppercase;
   color: var(--primery-white-color);
 }
+.join-list {
+  display: flex;
+}
+.join-item:not(:last-child) {
+  margin-right: 10px;
+}
+.join-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+.join-link .icon {
+  fill: var(--primery-white-color);
+}
 
 /* стили портфолио */
+
 .portfolio {
   padding-top: 93px;
   padding-bottom: 94px;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 .filter-list {
@@ -475,12 +524,24 @@ ul a:focus {
 .portfolio-card:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
+.portfolio-img {
+  height: 294px;
+}
+.portfolio-img > .img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 
+  object-fit: fill;
+  object-position: left top;
+}
 .portfolio-desc {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 24px;
   padding-right: 24px;
+  border: 1px solid #eeeeee;
+  border-top: transparent;
 }
 
 .portfolio-title {
