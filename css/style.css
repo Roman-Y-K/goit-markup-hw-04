@@ -287,6 +287,9 @@ body {
 
 .app-title {
   margin: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.143;
